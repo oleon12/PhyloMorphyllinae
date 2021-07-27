@@ -1,0 +1,83 @@
+macro=;
+mxram 2000;
+proc Combined.tnt;
+
+hold 1000;
+taxname=;
+
+outgroup Glossophaga;
+xpiwe=;
+
+block;
+
+xpiwe[0-12; /* Continuous */
+xpiwe[13-13; /* Landmark Dorsal1 */
+xpiwe[14-14; /* Landmark Dorsal2 */
+xpiwe[15-15; /* Landmark Lateral1 */
+xpiwe[16-16; /* Landmark Lateral2 */
+xpiwe[17-17; /* Landmark Mandibula1 */
+xpiwe[18-18; /* Landmark Mandibula2 */
+xpiwe[19-19; /* Landmark Ventral1 */
+xpiwe[20-70; /* Discrete (Morphology) */
+xpiwe[71-684; /* Molecular () */
+xpiwe[685-1824; /* Molecular () */
+xpiwe[1825-2281; /* Molecualr () */
+
+xpiwe(*;
+
+xpiwe(0-12 /2.117875;/* Continuous */
+xpiwe(13-19 /0.95; /* Landmarks */
+xpiwe(20-70 /2.9005; /* Discrete (Morphology) */
+xpiwe(71-684 /3.589;/* Molecular () */
+xpiwe(685-1824 /3.589;/* Molecular () */
+xpiwe(1825-2281 /3.589;/* Molecualr () */
+
+lmark fact =*;
+lmark rescale =*;
+
+lmark termpoints;
+lmark iter;
+lmark cell 5 nest 8 2;
+
+lmark usmin=!;  
+
+xpiwe;
+
+xmult = replic 1000 ratchet 10 drift 10 level 7 hits 3;
+bb=tbr;
+
+score;
+nel*;
+
+quote Length; length;
+quote xCost; xpiwe&cost;
+quote xHomo;xpiwe&homoplasy;
+quote xSize; xpiwe&size;
+quote xKval; xpiwe&kvalue;
+quote xScore; xpiwe&score;
+quote xSteps; xpiwe&steps;
+
+ts Combined_Loncho.ctf;
+save;
+ts/;
+
+quote Score; score;
+quote Homo; chomo;
+quote Fit; fit;
+
+ttags=;
+export -Combined_Loncho.tre;
+
+resample jak replic 100 prob 25 freq cut 45;
+ttags;
+export -Combined_Loncho_jack.tre;
+
+resample sym replic 100 prob 25 freq cut 45;
+ttags;
+export -Combined_Loncho_sym.tre;
+
+log All_Loncho.txt;
+svtxt;
+log/;
+
+quit;
