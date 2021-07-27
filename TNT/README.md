@@ -6,7 +6,7 @@ These are the macro-script used to run the MP analyses under extended implied we
 
 2. Now make sure that the TNT executable is in the same folder and put this command.
 
-´´´
+```
 #For Linux, use the terminal
 
 tnt run Combined.run;
@@ -15,4 +15,4 @@ tnt run Combined.run;
 
 run Combined.run;
 
-´´´
+```
