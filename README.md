@@ -8,4 +8,4 @@ Leon-Alvarado OD, Biganzoli-Rangel AJ, Gutiérrez EE, Paladini A. </br>
 - **Tree:** All obtained tree from the analyses. Trees in binary format </br>
 ***
 
-_If yoy want to rerun these analyses please go to <a href="https://github.com/oleon12/PhyloMorphyllinae/tree/main/TNT">TNT</a> and read the README file_
+_If yoy want to rerun these analyses please go to <a href="https://github.com/oleon12/PhyloMorphyllinae/tree/main/TNT">TNT</a> directory and read the README file_
