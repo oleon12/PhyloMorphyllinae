@@ -9,7 +9,7 @@ These are the macro-script used to run the MP analyses under extended implied we
 ```
 #For Linux, use the terminal
 
-tnt run Combined.run;
+./tnt run Combined.run;
 
 #For Windows, use the TNT's command window
 
@@ -28,7 +28,7 @@ run Combined.run;
 ```
 #For Linux, use the terminal
 
-tnt mxram 2000 proc Combined.tnt sh Combined_Loncho.ctf run stats.run;
+./tnt mxram 2000 proc Combined.tnt sh Combined_Loncho.ctf run stats.run;
 
 #For Windows, use the TNT's command window
 
