@@ -1,0 +1,53 @@
+macro=;
+mxram 2000;
+proc Morphology.tnt;
+
+hold 1000;
+taxname=;
+outgroup Glossophaga;
+
+piwe=2.9005;
+
+xpiwe=;
+xpiwe[0-50;
+xpiwe(*;
+
+xmult = replic 1000 ratchet 10 drift 10 level 7 hits 3;
+bb=tbr;
+
+score;
+
+nel*;
+
+quote Length; length;
+quote xCost; xpiwe&cost;
+quote xHomo;xpiwe&homoplasy;
+quote xSize; xpiwe&size;
+quote xKval; xpiwe&kvalue;
+quote xScore; xpiwe&score;
+quote xSteps; xpiwe&steps;
+
+ts Morphology_Loncho.ctf;
+save;
+ts/;
+
+quote Score; score;
+quote Homo; chomo;
+quote Fit; fit;
+
+ttags=;
+export -Morphology_Loncho.tre;
+
+resample jak replic 100 prob 25 freq cut 45;
+ttags;
+export -Morphology_Loncho_jack.tre;
+
+resample sym replic 100 prob 25 freq cut 45;
+ttags;
+export -Morphology_Loncho_sym.tre;
+
+log Morphology_Loncho.txt;
+svtxt;
+log/;
+
+quit;
