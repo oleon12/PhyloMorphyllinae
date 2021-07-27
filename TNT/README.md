@@ -23,7 +23,7 @@ run Combined.run;
   - **Combined_Loncho_sym.tre:** The most parsimonious trees in Nexus format, after the Symmetric resampling (not useful).
   - **Combined.txt:** The log file from the run. It displays all the information that TNT generates, useful if you wanna see Scores, Indices, etc ...
 
-4. Finally, if you want to calculate tree statistics (i.e., Consistency, Retention and Rescaled Indices), download the [stats.run]:https://github.com/oleon12/PhyloMorphyllinae/blob/main/TNT/stats.run script, put in the same folder where you ran the analysis and put the following commands.
+4. Finally, if you want to calculate tree statistics (i.e., Consistency, Retention and Rescaled Indices), download the <a href="https://github.com/oleon12/PhyloMorphyllinae/blob/main/TNT/stats.run">stats.run</a> script, put in the same folder where you ran the analysis and put the following commands.
 
 ```
 #For Linux, use the terminal
