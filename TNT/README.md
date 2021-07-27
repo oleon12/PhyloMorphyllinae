@@ -16,7 +16,7 @@ tnt run Combined.run;
 run Combined.run;
 
 ```
- 3. The script will generate the following outputs:
+3. The script will generate the following outputs:
   1. **Combined_Loncho.ctf:** The most parsimonious trees in binary format.
   2. **Combined_Loncho.tre:** The most parsimonious trees in Nexus format.
   3. **Combined_Loncho_jack.tre:** The most parsimonious trees in Nexus format, after the Jackknife resampling (not useful).
