@@ -1,0 +1,88 @@
+macro= ;
+report- ; 
+var =
+   0 themin
+   1 themax
+   + clist [ ( nchar + 1 ) ]
+   + tlist [ ( ntrees + 1 ) ]
+   + CIs [ ( ntrees + 1 ) ]
+   + RIs [ ( ntrees + 1 ) ]
+   + rCIs [ ( ntrees + 1 ) ]
+   + Hs [ ( ntrees + 1 ) ]
+   + dist [ ( ntrees + 1 ) ]
+   + this
+   + todo
+;
+
+/***************************************************\
+|                 Tree by Tree                      |
+\***************************************************/
+
+
+set themin minsteps ;
+set themax maxsteps ;
+loop 0 ntrees
+   progress #1 (ntrees+1) Calculating indices... ;
+   set this length[#1] ;
+   set CIs[#1] 'themin'/'this' ;
+   set RIs[#1] ('themax'-'this')/('themax'-'themin') ;
+   set rCIs[#1] (('themax'-'this')/('themax'-'themin'))*('themin'/'this');
+   set Hs[#1] 'this'-'themin';
+   set dist[#1] ('this'-'themin')/('themax'-'themin');
+   stop
+progress/ ;
+report= ;
+macfloat 3 ; 
+maketable CIs Consistency index ;
+maketable RIs Retention index ;
+maketable rCIs Rescaled Consistency index;
+maketable Hs Homoplasy;
+maketable dist Distorsion coefficient;
+
+/***************************************************\
+|                 Char by Char                      |
+\***************************************************/
+
+var =
+   + CIs [ ( nchar + 1 ) ]
+   + RIs [ ( nchar + 1 ) ]
+   + rCIs [ ( nchar + 1 ) ]
+   + Hs [ ( nchar + 1 ) ]
+   + dist [ ( nchar + 1 ) ]
+;   
+
+loop 0 ntrees 
+   set tlist[#1] 1; 
+   stop
+set todo ntrees + 1;
+
+loop 0 nchar 
+   set clist[#1] 1; 
+   stop
+   
+loop 0 ntrees
+   if ( 'tlist[#1]' < 1 ) 
+       continue ;
+       end
+   loop 0 nchar
+      set themin minsteps[#2] ;
+      set themax maxsteps[#2] ;
+      if ( ( 'clist[#2]' < 1) || ( 'themin' >= 'themax' ) || ( isact[#2] ==0 ) )      
+        set CIs[#2] ( -1 ) ;
+        set RIs[#2] ( -1 ) ;
+        continue ;
+        end
+      set this length[#1 #2] ;
+      set CIs[#2] 'themin' / 'this' ;
+      set RIs[#2] ('themax'-'this')/('themax'-'themin') ;
+      stop
+   maketable CIs Tree #1, Character Consistency Index ;
+   maketable RIs Tree #1, Character Retention Index ;
+   stop   
+
+
+log stats.txt;
+svtxt;
+log/;
+  
+proc/ ; 
