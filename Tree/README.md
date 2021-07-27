@@ -1,4 +1,4 @@
-# Tress
+# Trees
 
 Most parsimonious trees from all five <a href="https://github.com/oleon12/PhyloMorphyllinae/tree/main/Matrix" >matrices</a>  in binary format. To read these trees, you have to download the respective matrix data, put the tree, data files and TNT executable in the same directory and run the following command:
 
