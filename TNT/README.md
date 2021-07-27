@@ -22,3 +22,16 @@ run Combined.run;
   - **Combined_Loncho_jack.tre:** The most parsimonious trees in Nexus format, after the Jackknife resampling (not useful).
   - **Combined_Loncho_sym.tre:** The most parsimonious trees in Nexus format, after the Symmetric resampling (not useful).
   - **Combined.txt:** The log file from the run. It displays all the information that TNT generates, useful if you wanna see Scores, Indices, etc ...
+
+4. Finally, if you want to calculate tree statistics (i.e., Consistency, Retention and Rescaled Indices), download the "stats.run" script, put in the same folder where you ran the analysis and put the following commands.
+
+```
+#For Linux, use the terminal
+
+tnt mxram 2000 proc Combined.tnt sh Combined_Loncho.ctf run stats.run;
+
+#For Windows, use the TNT's command window
+
+mxram 1000 proc Combined.tnt sh Combined_Loncho.ctf run stats.run;
+
+```
