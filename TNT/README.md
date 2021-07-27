@@ -17,8 +17,8 @@ run Combined.run;
 
 ```
 3. The script will generate the following outputs:
-  1. **Combined_Loncho.ctf:** The most parsimonious trees in binary format.
-  2. **Combined_Loncho.tre:** The most parsimonious trees in Nexus format.
-  3. **Combined_Loncho_jack.tre:** The most parsimonious trees in Nexus format, after the Jackknife resampling (not useful).
-  4. **Combined_Loncho_sym.tre:** The most parsimonious trees in Nexus format, after the Symmetric resampling (not useful).
-  5. **Combined.txt:** The log file from the run. It displays all the information that TNT generates, useful if you wanna see Scores, Indices, etc ...
+  - **Combined_Loncho.ctf:** The most parsimonious trees in binary format.
+  - **Combined_Loncho.tre:** The most parsimonious trees in Nexus format.
+  - **Combined_Loncho_jack.tre:** The most parsimonious trees in Nexus format, after the Jackknife resampling (not useful).
+  - **Combined_Loncho_sym.tre:** The most parsimonious trees in Nexus format, after the Symmetric resampling (not useful).
+  - **Combined.txt:** The log file from the run. It displays all the information that TNT generates, useful if you wanna see Scores, Indices, etc ...
